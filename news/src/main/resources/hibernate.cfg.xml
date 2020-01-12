@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+  <session-factory>
+    <!-- Database connection settings -->
+    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+    <property name="connection.driver_class">org.postgresql.Driver</property>
+    <property name="connection.url">jdbc:postgresql://127.0.0.1:5300/postgres</property>
+    <property name="connection.username">postgres</property>
+    <property name="connection.password">root</property>
+    <property name="connection_pool_size">10</property>
+	<property name="hbm2ddl.auto">create</property>
+    <property name="show_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    
+	<!--<mapping class="/news/src/main/java/RussiaRT/news/HivernateUtil.java"/>-->
+	<mapping resource="news.cfg.xml"/>
+	<mapping class="RussiaRT.news.news" />
+  </session-factory>
+</hibernate-configuration>
